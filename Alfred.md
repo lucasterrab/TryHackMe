@@ -1,11 +1,11 @@
-#Alfred (Jenkins/Nishang)
+# Alfred (Jenkins/Nishang)
 
 **Machine info:**
   **- IP: 10.10.179.52**
 
-##Task 1 - Initial Access
+## Task 1 - Initial Access
 
-#####Question 1 - How many ports are open?
+##### Question 1 - How many ports are open?
 
 ```
 ──(kali㉿kali)-[~]
@@ -40,11 +40,11 @@ Service detection performed. Please report any incorrect results at https://nmap
 Nmap done: 1 IP address (1 host up) scanned in 29.38 seconds
 ```
 
-#####Question 2 - What is the username and password for the log in panel(in the format username:password)
+##### Question 2 - What is the username and password for the log in panel(in the format username:password)
 Accessing the http://10.10.179.52:80 does not give us much info, but there is the port 8080 which give us the login panel.
 Login attempt with the default **admin:admin** enabled access to the dashboard.
 
-#####Question 3 - Find a feature of the tool that allows you to execute commands on the underlying system.
+##### Question 3 - Find a feature of the tool that allows you to execute commands on the underlying system.
 Looking around Jenkins I found the console inside the job/project and clicking on the build history.
 Get the Invoke-PowerShellTcp.ps1 script from Nishang (https://github.com/samratashok/nishang).
 Create a webserver on VM via python3
@@ -73,7 +73,7 @@ PS C:\Program Files (x86)\Jenkins\workspace\project>
 
 We are inside now :)
 
-#####Question 4 - What is the user.txt flag?
+##### Question 4 - What is the user.txt flag?
 cd into bruce's desktop
 
 ```
@@ -94,9 +94,9 @@ PS C:\Users\bruce\Desktop> type user.txt
 **79007a09481963edf2e1321abd9ae2a0**
 ```
 
-##Task 2 - Switching Shells
+## Task 2 - Switching Shells
 
-#####Question 1 - What is the final size of the exe payload that you generated?
+##### Question 1 - What is the final size of the exe payload that you generated?
 Let's create the reverse shell using msfvenom
 
 ```
